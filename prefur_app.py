@@ -93,12 +93,12 @@ def prefur_predict(seq, struct, temp=298.):
     bf, bu = thermo.barrier(FES.DG)
     kf = kinetics.rates(barrier=bf, nres=nres, temp=temp)
     ku = kinetics.rates(barrier=bu, nres=nres, temp=temp)
-    return f'''
-        Folding Rate: ${np.round(kf, 4)}$ $s^{-1}$
+    return dcc.Markdown(f'''
+        Folding Rate: {np.round(kf, 4)} per second
         
-        Unfolding Rate: ${np.round(ku, 4)}$ $s^{-1}$
+        Unfolding Rate: {np.round(ku, 4)} per second
 
-        '''
+        ''')
 
 
 if __name__ == '__main__':
