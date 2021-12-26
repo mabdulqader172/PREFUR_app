@@ -10,7 +10,9 @@ import warnings
 # create app object
 warnings.filterwarnings('ignore')
 external_stylesheets = [dbc.themes.BOOTSTRAP]
+mathjax = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app.scripts.append_script({ 'external_url' : mathjax })
 server = app.server
 
 # set app layout
