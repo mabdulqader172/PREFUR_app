@@ -1,0 +1,1 @@
+web: gunicorn prefur_app:server
